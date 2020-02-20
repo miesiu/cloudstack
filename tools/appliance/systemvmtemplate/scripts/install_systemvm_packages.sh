@@ -61,7 +61,6 @@ function install_packages() {
     ipvsadm conntrackd libnetfilter-conntrack3 \
     keepalived irqbalance \
     ipcalc \
-    openjdk-8-jre-headless \
     ipset \
     iptables-persistent \
     libtcnative-1 libssl-dev libapr1-dev \
@@ -73,7 +72,7 @@ function install_packages() {
     strongswan libcharon-extra-plugins libstrongswan-extra-plugins \
     virt-what open-vm-tools qemu-guest-agent hyperv-daemons
 
-  apt-get -q -y -t stretch-backports install nftables
+  apt-get -q -y -f -t jessie-backports install openjdk-8-jre-headless nftables
 
   apt-get -y autoremove --purge
   apt-get clean
@@ -89,9 +88,12 @@ function install_packages() {
   fi
 
   # Install xenserver guest utilities as debian repos don't have it
-  wget https://mirrors.kernel.org/ubuntu/pool/main/x/xe-guest-utilities/xe-guest-utilities_7.10.0-0ubuntu1_amd64.deb
-  dpkg -i xe-guest-utilities_7.10.0-0ubuntu1_amd64.deb
-  rm -f xe-guest-utilities_7.10.0-0ubuntu1_amd64.deb
+  #wget https://mirrors.kernel.org/ubuntu/pool/main/x/xe-guest-utilities/xe-guest-utilities_7.10.0-0ubuntu1_amd64.deb
+  #dpkg -i xe-guest-utilities_7.10.0-0ubuntu1_amd64.deb
+  #rm -f xe-guest-utilities_7.10.0-0ubuntu1_amd64.deb
+  wget https://raw.githubusercontent.com/bhaisaab/cloudstack-nonoss/master/xe-guest-utilities_6.5.0_amd64.deb
+  dpkg -i xe-guest-utilities_6.5.0_amd64.deb
+  rm -f xe-guest-utilities_6.5.0_amd64.deb 
 }
 
 return 2>/dev/null || install_packages
