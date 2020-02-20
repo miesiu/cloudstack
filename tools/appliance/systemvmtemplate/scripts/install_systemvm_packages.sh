@@ -62,6 +62,7 @@ function install_packages() {
     keepalived irqbalance \
     ipcalc \
     ipset \
+    openjdk-8-jre-headless \
     iptables-persistent \
     libtcnative-1 libssl-dev libapr1-dev \
     python-flask \
@@ -72,7 +73,7 @@ function install_packages() {
     strongswan libcharon-extra-plugins libstrongswan-extra-plugins \
     virt-what open-vm-tools qemu-guest-agent hyperv-daemons
 
-  apt-get -q -y -f -t jessie-backports install openjdk-8-jre-headless nftables
+  apt-get -q -y -f -t jessie-backports install nftables
 
   apt-get -y autoremove --purge
   apt-get clean
