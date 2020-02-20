@@ -38,8 +38,8 @@
       "disk_interface": "virtio",
       "net_device": "virtio-net",
 
-      "iso_url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.9.0-amd64-netinst.iso",
-      "iso_checksum": "42d9818abc4a08681dc0638f07e7aeb35d0c44646ab1e5b05a31a71d76c99da52b6192db9a3e852171ac78c2ba6b110b337c0b562c7be3d32e86a105023a6a0c",
+      "iso_url": "https://cdimage.debian.org/mirror/cdimage/archive/8.11.1/amd64/iso-cd/debian-8.11.1-amd64-netinst.iso",
+      "iso_checksum": "29c73e5b0669c32d15600eb0a0b00eb08a7600fac231decaf85c2cd3d449cea4b48053601277acaa6907cf840a2fe9f22efc8a9a3f5f30ded7260ed4b391768d",
       "iso_checksum_type": "sha512",
 
       "vm_name": "systemvmtemplate",
@@ -51,6 +51,9 @@
 
       "ssh_host_port_min": 2222,
       "ssh_host_port_max": 2229,
+      
+      "vnc_port_min": 5923,
+      "vnc_port_max": 5923,
 
       "ssh_username": "cloud",
       "ssh_password": "cloud",
