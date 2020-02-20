@@ -43,7 +43,7 @@ function install_packages() {
   debconf_packages
   install_vhd_util
 
-  local apt_get="apt-get --no-install-recommends -q -y"
+  local apt_get="apt-get -q -y -f --no-install-recommends"
 
   ${apt_get} install grub-legacy \
     rsyslog logrotate cron net-tools ifupdown tmux vim-tiny htop netbase iptables \
