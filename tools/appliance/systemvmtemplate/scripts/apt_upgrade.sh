@@ -36,7 +36,7 @@ function add_backports() {
   sed -i '/deb-src/d' /etc/apt/sources.list
   sed -i '/backports/d' /etc/apt/sources.list
   sed -i '/security/d' /etc/apt/sources.list
-  echo 'deb http://security.debian.org/debian-security stretch/updates main' >> /etc/apt/sources.list
+  echo 'deb http://security.debian.org/debian-security jessie/updates main' >> /etc/apt/sources.list
   echo 'deb-src http://archive.debian.org/debian jessie-backports main' >> /etc/apt/sources.list
   echo 'Acquire::Check-Valid-Until no;' >> /etc/apt/apt.conf.d/99no-check-valid-until
 }
